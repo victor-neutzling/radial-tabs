@@ -1,0 +1,153 @@
+#rw-radial-wheel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  width: 320px;
+  height: 320px;
+
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+
+  background: rgba(30, 30, 30, 0.9);
+
+  pointer-events: none;
+  z-index: 999999;
+}
+
+.rw-wheel-item {
+  position: absolute;
+
+  top: 22.5%;
+  left: 22.5%;
+
+  transform-origin: 0 0;
+
+  color: white;
+  font-size: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rw-wheel-label-wrapper {
+  height: 180px;
+  width: 180px;
+  max-width: 180px;
+  max-height: 180px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rw-wheel-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.75);
+  padding: 6px 10px;
+
+  border-radius: 8px;
+
+  backdrop-filter: blur(3px);
+
+  transition:
+    transform 0.12s ease,
+    background 0.12s ease;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rw-wheel-label span {
+  color: white !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Ubuntu,
+    Cantarell,
+    "Noto Sans",
+    Arial,
+    sans-serif;
+}
+
+.rw-wheel-item.active .rw-wheel-label {
+  color: black;
+  transform: scale(1.15);
+}
+
+.rw-wheel-label img {
+  width: 20px;
+  height: 20px;
+
+  margin-bottom: 3px;
+}
+
+.rw-wheel-divider {
+  position: absolute;
+
+  left: 50%;
+
+  width: 2px;
+  height: 160px;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  transform-origin: bottom center;
+}
+
+#rw-wheel-clear {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 90px;
+  height: 90px;
+
+  background: rgba(60, 60, 60, 0.9);
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  pointer-events: auto;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Ubuntu,
+    Cantarell,
+    "Noto Sans",
+    Arial,
+    sans-serif;
+  pointer-events: auto;
+  transition:
+    transform 0.12s ease,
+    background 0.12s ease,
+    box-shadow 0.12s ease;
+}
+
+#rw-wheel-clear:hover {
+  background: rgba(90, 90, 90, 0.95); /* slightly brighter */
+}
