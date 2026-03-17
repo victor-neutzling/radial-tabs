@@ -2,7 +2,7 @@ let wheelOpen = false;
 let tabs = [];
 
 document.addEventListener("keydown", async (e) => {
-  if (e.key === "Alt" && !wheelOpen) {
+  if (e.ctrlKey && e.altKey && !wheelOpen) {
     tabs = await browser.runtime.sendMessage({
       type: "GET_RADIAL_TABS",
     });
@@ -15,7 +15,7 @@ document.addEventListener("keydown", async (e) => {
 });
 
 document.addEventListener("keyup", async (e) => {
-  if (e.key === "Alt" && wheelOpen) {
+  if (e.ctrlKey && e.altKey && wheelOpen) {
     const result = getSelectedTab();
 
     if (result === "CLEAR") {
