@@ -15,7 +15,7 @@ document.addEventListener("keydown", async (e) => {
 });
 
 document.addEventListener("keyup", async (e) => {
-  if (e.ctrlKey && e.altKey && wheelOpen) {
+  if (!e.ctrlKey && !e.altKey && wheelOpen) {
     const result = getSelectedTab();
 
     if (result === "CLEAR") {
